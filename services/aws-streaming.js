@@ -80,10 +80,10 @@ var s3UploadService = function(req, next) {
     next(err);
   });
 
-  req.busboy.on('end', function() {
+  req.busboy.on('finish', function() {
     console.log('Done parsing the form!');
     // When everythin's done, render the view
-    next();
+    next(null, 'http://www.google.com');
   });
 
   // Start the parsing

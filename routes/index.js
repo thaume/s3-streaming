@@ -1,10 +1,10 @@
-var awsUploads = require('../services/aws_streaming');
+var awsUpload = require('../services/aws-streaming');
 
 // Index route
 // ===========
 exports.index = function(req, res){
   if (req.method === 'POST') {
-    return awsUploads(req, function() {
+    return awsUpload(req, function(err, url) {
       res.end('<html><head></head><body>\
                  <h1>All good !</h1>\
               </body></html>');
